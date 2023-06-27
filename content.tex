@@ -1,0 +1,85 @@
+\documentclass{article}
+
+% content related packages
+\usepackage[os=win]{menukeys}
+
+% layout related packages
+\usepackage{parskip}
+\usepackage[a4paper, margin=1pt]{geometry}
+\usepackage{pdflscape}
+
+
+% TODO show the mod key in a diferent way, maybe shortend as "mod" or darker like the example
+\newcommand{\mod}{\ctrl + B}
+\newcommand{\tkeys}[1]{\keys{\ctrl + B + #1}}
+
+
+
+\begin{document}
+
+\begin{landscape}
+\section{sessions}
+\subsection*{new sessions}
+tmux 
+tmux new 
+tmux new-session
+tmux new -s sessionname
+\subsection*{attach sessions}
+tmux a 
+tmux attach
+tmux a -t sessionname
+\subsection*{remove sessions}
+tmux kill-session -t sessionname
+\subsection*{key bindings}
+\tkeys{\$} rename \\
+\tkeys{D} detach \\
+\tkeys{(} next \\
+\tkeys{)} previous \\
+
+\section{panes}
+are the sections that make up a window
+\subsection*{key bindings}
+\tkeys{\%} vertical split \\
+% this was shortened
+% TODO fix this odd looking combination of arrows
+\tkeys{\arrowkeyup, \arrowkeydown, \arrowkeyleft ,\arrowkeyright} move to pane (up,down,left,right) \\
+
+\tkeys{O} go to next pane \\ % that is an O, the letter, not a number
+\tkeys{;} go to last active pane \\
+\tkeys{\}} move pane right \\
+\tkeys{\{} move pane left \\
+\tkeys{!} convert pane to window \\
+\tkeys{X} kill pane
+
+\section{windows}
+are like tabs and occupy the space of a session screen
+\subsection*{key bindings}
+\tkeys{C} create window \\
+\tkeys{N} move to next window \\
+\tkeys{P} move to previous window \\
+\tkeys{L} move to most recent window \\
+\tkeys{0..9} select window by number \\
+\tkeys{'} select window by name \\
+\tkeys{.} change window number \\
+\tkeys{,} rename window \\
+\tkeys{F} search window \\
+\tkeys{\&} kill window 
+
+\section{copy mode}
+\subsection*{key bindings}
+\tkeys{[} enter copy mode \\
+\tkeys{]} paste from buffer
+
+\subsection*{copy mode commands}
+\keys{\SPACE} start selection \\
+\keys{\enter} copy selection \\
+\keys{\esc} clear selection \\
+\keys{g} go to top \\
+\keys{G} go to bottom \\
+\keys{hjkl} move cursor (left,down,up,right) \\
+\keys{/} search \\
+\keys{\#} list paste buffers \\
+\keys{q} quit
+\end{landscape}
+
+\end{document}
