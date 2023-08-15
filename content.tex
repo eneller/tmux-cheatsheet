@@ -5,19 +5,25 @@
 
 % layout related packages
 \usepackage{parskip}
-\usepackage[a4paper, margin=1pt]{geometry}
+\usepackage[a4paper, margin=.9cm]{geometry}
 \usepackage{pdflscape}
+\usepackage{multicol}
 
 
 % TODO show the mod key in a diferent way, maybe shortend as "mod" or darker like the example
 \newcommand{\mod}{\ctrl + B}
 \newcommand{\tkeys}[1]{\keys{\ctrl + B + #1}}
 
+% \end{minipage} and \begin{minipage} cannot be seperated by an empty line
+
 
 
 \begin{document}
 
 \begin{landscape}
+\begin{multicols}{2}
+\begin{minipage}{\columnwidth}
+    
 \section{sessions}
 \subsection*{new sessions}
 tmux 
@@ -35,7 +41,8 @@ tmux kill-session -t sessionname
 \tkeys{D} detach \\
 \tkeys{(} next \\
 \tkeys{)} previous \\
-
+\end{minipage}
+\begin{minipage}{\columnwidth}
 \section{panes}
 are the sections that make up a window
 \subsection*{key bindings}
@@ -50,7 +57,13 @@ are the sections that make up a window
 \tkeys{\{} move pane left \\
 \tkeys{!} convert pane to window \\
 \tkeys{X} kill pane
+\end{minipage}
+\end{multicols}
 
+\vspace*{\fill} % Pushes the next minipages to the bottom
+
+\begin{multicols}{2}
+\begin{minipage}{\columnwidth}
 \section{windows}
 are like tabs and occupy the space of a session screen
 \subsection*{key bindings}
@@ -64,7 +77,8 @@ are like tabs and occupy the space of a session screen
 \tkeys{,} rename window \\
 \tkeys{F} search window \\
 \tkeys{\&} kill window 
-
+\end{minipage}
+\begin{minipage}{\columnwidth}
 \section{copy mode}
 \subsection*{key bindings}
 \tkeys{[} enter copy mode \\
@@ -80,6 +94,8 @@ are like tabs and occupy the space of a session screen
 \keys{/} search \\
 \keys{\#} list paste buffers \\
 \keys{q} quit
+\end{minipage}
+\end{multicols}
 \end{landscape}
 
 \end{document}
