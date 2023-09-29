@@ -24,15 +24,15 @@
 \begin{multicols}{2}
 \begin{minipage}{\columnwidth}
     
-\section{sessions}
+\section*{sessions}
 \subsection*{new sessions}
-tmux 
-tmux new 
-tmux new-session
+tmux,
+tmux new,
+tmux new-session,
 tmux new -s sessionname
 \subsection*{attach sessions}
-tmux a 
-tmux attach
+tmux a ,
+tmux attach,
 tmux a -t sessionname
 \subsection*{remove sessions}
 tmux kill-session -t sessionname
@@ -43,7 +43,7 @@ tmux kill-session -t sessionname
 \tkeys{)} previous \\
 \end{minipage}
 \begin{minipage}{\columnwidth}
-\section{panes}
+\section*{panes}
 are the sections that make up a window
 \subsection*{key bindings}
 \tkeys{\%} vertical split \\
@@ -64,7 +64,7 @@ are the sections that make up a window
 
 \begin{multicols}{2}
 \begin{minipage}{\columnwidth}
-\section{windows}
+\section*{windows}
 are like tabs and occupy the space of a session screen
 \subsection*{key bindings}
 \tkeys{C} create window \\
@@ -79,7 +79,7 @@ are like tabs and occupy the space of a session screen
 \tkeys{\&} kill window 
 \end{minipage}
 \begin{minipage}{\columnwidth}
-\section{copy mode}
+\section*{copy mode}
 \subsection*{key bindings}
 \tkeys{[} enter copy mode \\
 \tkeys{]} paste from buffer
