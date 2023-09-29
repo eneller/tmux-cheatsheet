@@ -10,7 +10,7 @@
 \usepackage{multicol}
 
 
-% TODO show the mod key in a diferent way, maybe shortend as "mod" or darker like the example
+% TODO show the mod key in a diferent way, maybe shortend as "mod" 
 \newcommand{\mod}{\ctrl + B}
 \newcommand{\tkeys}[1]{\keys{\ctrl + B + #1}}
 
@@ -47,10 +47,10 @@ tmux kill-session -t sessionname
 are the sections that make up a window
 \subsection*{key bindings}
 \tkeys{\%} vertical split \\
+\tkeys{''} horizontal split \\
 % this was shortened
 % TODO fix this odd looking combination of arrows
 \tkeys{\arrowkeyup, \arrowkeydown, \arrowkeyleft ,\arrowkeyright} move to pane (up,down,left,right) \\
-
 \tkeys{O} go to next pane \\ % that is an O, the letter, not a number
 \tkeys{;} go to last active pane \\
 \tkeys{\}} move pane right \\
